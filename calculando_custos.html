@@ -1,20 +1,31 @@
 <meta charset="UTF-8">
-<h1> CALCULANDO CUSTOS MENSAIS </h1>
-
-Eu ganho R$ 1000,00 no mês
 <script>
   function linha() {
 
    document.write("<br>");
 
 }
-  alert("Vamos calcular?");
 
-  document.write("e gasto R$565,00 com contas, fico com R$ " + (1000-565) + ",00. Retiro R$ " + (565 - 315) + ",00 que  gasto com lazer e o que me sobra guardo em uma poupança.");
-  linha();
-  document.write("Qual a porcentagem do valor destinado a poupança?");
-  linha();
-  linha();
+function mostra(frase){
+
+	document.write(frase)
+}
+
+alert("Vamos calcular?");
   
-  document.write("A porcentagem do valor é  " + ((435 - 250)*100/1000) +  "%");
+ var valorInicial = prompt("Informe o valor estimado");
+ var valorContas = prompt("Qual o valor gasto com necessidades? (contas, dívidas, aluguel, etc)");
+ var valorRestante1 = (valorInicial - valorContas);
+ var valorLazer = prompt("Qual o valor utilizado para lazer? (roupas, sapatos, etc)");
+ var valorRestante2 = (valorRestante1 - valorLazer);
+ var valorPoupado = prompt("E se for o seu caso, qual a quantia destinado a poupança?");
+ var valorFinal = (valorRestante2 - valorPoupado);
+
+ mostra("A porcentagem do valor gasto com contas é " + Math.round((valorContas*100)/valorInicial) + "%");
+ linha();
+ linha();
+ mostra("A porcentagem do valor gasto com lazer é " + Math.round((valorLazer*100)/valorInicial) + "%");
+ linha();
+ linha();
+ mostra("A porcentagem do valor destinado à poupança é " + Math.round((valorPoupado*100)/valorInicial) + "%");
 </script>
